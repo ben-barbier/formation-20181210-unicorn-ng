@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <img mat-card-avatar [src]="unicorn.photo">
+        <mat-card-title>{{ unicorn.name }}</mat-card-title>
+        <mat-card-subtitle>Id: {{ unicorn.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="unicorn.photo">
+    <mat-card-content>
+        <div>birthyear : {{ unicorn.birthyear }}</div>
+        <div>weight : {{ unicorn.weight }}</div>
+        <label>hobbies</label>
+        <ul><li *ngFor="let hobby of unicorn.hobbies">{{hobby}}</li></ul>
+        <label>capacities</label>
+        <ul><li *ngFor="let capacity of unicorn.capacities">{{capacity}}</li></ul>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-mini-fab color="primary"><mat-icon>favorite</mat-icon></button>
+        <button mat-mini-fab color="primary"><mat-icon>visibility</mat-icon></button>
+        <button mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+        <button mat-mini-fab color="primary"><mat-icon>delete</mat-icon></button>
+        <button mat-mini-fab color="primary" (click)="doSayHello()"><mat-icon>alarm</mat-icon></button>
+    </mat-card-actions>
+</mat-card>
+
+
+
