@@ -1,5 +1,6 @@
 <uni-unicorn-card
     *ngFor="let unicorn of unicorns"
     [unicorn]="unicorn"
-    (sayHello)="displayHello(unicorn)">
+    (sayHello)="displayHello(unicorn)"
+    (deleted)="removeFromList(unicorn)">
 </uni-unicorn-card>

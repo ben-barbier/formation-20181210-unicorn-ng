@@ -5,9 +5,13 @@
                  [opened]="!(isHandset$ | async)">
         <mat-toolbar>Menu</mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item href="#">Link 1</a>
-            <a mat-list-item href="#">Link 2</a>
-            <a mat-list-item href="#">Link 3</a>
+            <a mat-list-item
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact:true}"
+               [routerLink]="['']">List</a>
+            <a mat-list-item
+               routerLinkActive="active"
+               [routerLink]="['/details']">Details</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -21,8 +25,14 @@
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <span>unicorn-ng</span>
+            <span class="spacer"></span>
+            <span><mat-icon>visibility</mat-icon>{{ counter | async }}</span>
+            <span class="spacer"></span>
+            <span><mat-icon>fitness_center</mat-icon>{{ avg | async | number:'1.0-2' }}</span>
+            <span class="spacer"></span>
+            <span>{{ (cart | async).length }}<mat-icon>favorite</mat-icon></span>
         </mat-toolbar>
         <!-- Add Content Here -->
-        <uni-unicorn-list></uni-unicorn-list>
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>

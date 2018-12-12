@@ -1,0 +1,24 @@
+<form (ngSubmit)="saveUnicorn(unicorn)" #editForm="ngForm">
+    <h1 mat-dialog-title>{{ unicorn.id }}</h1>
+    <div mat-dialog-content>
+        <div style="display: flex; flex-direction: column;">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput name="name" [(ngModel)]="unicorn.name" placeholder="Nom de la licorne...">
+                <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Poids</mat-label>
+                <input type="number" matInput name="weight" [(ngModel)]="unicorn.weight" placeholder="Poids de la licorne">
+                <mat-icon matSuffix>fitness_center</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-stroked-button mat-dialog-close>Annuler</button>
+        <button mat-stroked-button
+                color="primary"
+                type="submit"
+                cdkFocusInitial>Enregistrer</button>
+    </div>
+</form>
