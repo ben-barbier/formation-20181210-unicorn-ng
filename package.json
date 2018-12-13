@@ -6,6 +6,7 @@
     "start": "ng serve --port=4205",
     "build": "npm run lint && npm run ng -- build --prod --base-href /unicorn-ng/",
     "test": "ng test",
+    "coverage": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -20,7 +21,9 @@
     "@angular/material": "^7.1.1",
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
+    "@angular/pwa": "^0.11.2",
     "@angular/router": "~7.1.0",
+    "@angular/service-worker": "~7.1.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "socket.io-client": "^2.2.0",

@@ -24,6 +24,8 @@ import {MagicalNamePipe} from './shared/pipes/magical-name.pipe';
 import {UnicornDetailsComponent} from './pages/unicorn-details/unicorn-details.component';
 import {EditUnicornComponent} from './pages/unicorn-list/unicorn-card/modals/edit-unicorn/edit-unicorn.modal.component';
 import {FormsModule} from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -52,6 +54,7 @@ import {FormsModule} from '@angular/forms';
         MatFormFieldModule,
         FormsModule,
         MatInputModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     ],
     providers: [
         {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},
